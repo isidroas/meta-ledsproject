@@ -1,0 +1,13 @@
+[Unit]
+Description= Led driver with tcp interface
+After=led-driver.service
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=1
+User=root
+ExecStart=/usr/bin/lws-minimal-ws-server
+
+[Install]
+WantedBy=multi-user.target

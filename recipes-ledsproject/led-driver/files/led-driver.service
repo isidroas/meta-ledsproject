@@ -1,0 +1,13 @@
+[Unit]
+Description= Led driver with tcp interface
+After=network.target
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=1
+User=root
+ExecStart=/usr/bin/ws2812svr -tcp 8080 -i "setup 1,150,5; init; rainbow; render;"
+
+[Install]
+WantedBy=multi-user.target
